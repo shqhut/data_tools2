@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wayz.dataTools.postgreHandle.repository.TableTypeRelationMapper">
+
+    <select id="getActiveRelation"
+            resultType="com.wayz.dataTools.postgreHandle.dto.TableTypeRelationDto">
+        select
+            table_type,
+            type_id
+        from table_type_relation
+        where relation_status = 1;
+    </select>
+
+</mapper>

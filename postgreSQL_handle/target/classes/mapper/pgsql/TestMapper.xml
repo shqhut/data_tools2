@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wayz.dataTools.postgreHandle.repository.TestMapper">
+
+    <select id="getPgSqlResult" resultType="com.wayz.dataTools.postgreHandle.dto.PlaceIdGenerateDto">
+        select
+            id,
+            st_x(ST_Centroid(geometry)) as center_log,
+            st_y(ST_Centroid(geometry)) as center_lat
+        from airport where id isnull
+        limit 100;
+    </select>
+
+</mapper>
